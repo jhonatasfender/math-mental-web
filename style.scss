@@ -1,3 +1,5 @@
+@import "./node_modules/bootstrap/scss/bootstrap-grid";
+
 body {
   display: flex;
   width: 100%;
@@ -7,11 +9,6 @@ body {
   justify-content: center;
 
   .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 47rem;
-    height: 334px;
     background: linear-gradient(
       to bottom,
       #37be14 0%,
@@ -20,21 +17,39 @@ body {
     );
     border-radius: 21px;
     box-shadow: -2px -18px 30px -13px #37be14;
+
+    .default {
+      margin: 31px;
+    }
   }
 
   .sum {
-
+    cursor: pointer;
+    background: url(img/plus-solid.svg) no-repeat;
+    background-size: 78px;
   }
 
   .subtraction {
-
+    cursor: pointer;
+    background: url(img/minus-solid.svg) no-repeat;
+    background-size: 78px;
   }
 
   .multiplication {
-
+    cursor: pointer;
+    background: url(img/times-solid.svg) no-repeat;
+    background-size: 66px;
   }
 
   .division {
+    cursor: pointer;
+    background: url(img/divide-solid.svg) no-repeat;
+    background-size: 78px;
+  }
 
+  .square-root {
+    cursor: pointer;
+    background: url(img/square-root-alt-solid.svg) no-repeat;
+    background-size: 78px;
   }
 }

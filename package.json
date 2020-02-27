@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/jhonatasfender/math-mental-web#readme",
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0"
   }
 }
