@@ -1,0 +1,34 @@
+#app {
+  font-size: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  // span {
+
+  // }
+
+  input {
+    font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
+    margin-top: 60px;
+    width: 205px;
+    border: none;
+    display: inline-block;
+    text-align: left;
+    line-height: 2;
+    text-indent: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    letter-spacing: normal;
+    word-wrap: normal;
+    word-spacing: normal;
+    white-space: nowrap;
+    direction: ltr;
+    padding: 1px 0;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
