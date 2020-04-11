@@ -1,56 +1,30 @@
+import { ReturnCodeTextCHTML } from "../services/mathjax/math-return-code";
+
 export class Controllers {
   constructor() {
     this.app = $("#app");
-    this.input = $(`<input type="text">`);
-    this.span = $(`<span>`);
 
-    this.app.append(this.span).append(this.input);
+    this.valuesCols = [
+      "a + b",
+      "a - b",
+      "a \\times b",
+      "\\frac{a}{b}",
+      "\\sqrt{a}",
+      "a^b",
+      "a\\%"
+    ];
 
-    this.init();
+    this.row = $("<div/>").addClass("row");
 
-    this.input
-      .focus()
-      .blur(e => {
-        this.input.focus();
+    for (const code of this.valuesCols) {
+      let col = $("<div/>").addClass("col-4").attr("function", code);
+      col.html(ReturnCodeTextCHTML.chtml(code, col.get(0)));
+      col.click(e => {
+        console.log($(e.target).parents("div.col-4"), $(e.target).parents("div.col-4").attr("function"));
       })
-      .keyup(e => {
-        this.input.val(this.input.val().replace(/[^\d]+/g, ""));
-        let result = this.x + this.y;
-        let resultUser = parseInt(this.input.val());
+      this.row.append(col)
+    }
 
-        console.log(result === resultUser, result, resultUser);
-        if (result === resultUser) {
-          this.init();
-          this.input.focus().val("");
-        }
-      });
-  }
-
-  init() {
-    $(".MathJax").remove();
-
-    this.x = this.getRandomArbitrary(0, 9);
-    this.y = this.getRandomArbitrary(0, 9);
-
-    this.operation = `${this.x} + ${this.y} = `;
-    console.log(this.x, this.y, this.operation);
-
-    this.returnCode(this.operation);
-  }
-
-  returnCode(code) {
-    let options = MathJax.getMetricsFor(this.span.get(0), true);
-    MathJax.tex2chtmlPromise(code, options).then(html => {
-      this.span.get(0).appendChild(html);
-      let sheet = document.querySelector("#MJX-CHTML-styles");
-      if (sheet) sheet.parentNode.removeChild(sheet);
-      document.head.appendChild(MathJax.chtmlStylesheet());
-    });
-  }
-
-  getRandomArbitrary(min, max) {
-    min = parseInt(min);
-    max = parseInt(max);
-    return parseInt(Math.random() * (max - min) + min);
+    this.app.append(this.row);
   }
 }
