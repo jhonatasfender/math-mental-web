@@ -1,41 +1,50 @@
-import { ReturnCodeTextCHTML } from "../../../services/mathjax/math-return-code";
+import { ReturnCodeTextCHTML } from '../../../services/mathjax/math-return-code';
+import { Back } from "../../../services/always-used/back";
 
-export class Controllers {
+import { Random } from "../../../services/random/random";
+
+export class Addition {
   constructor() {
-    this.app = $("#app");
-    this.input = $(`<input type="text">`);
-    this.span = $(`<span>`);
-
-    this.app.append(this.span).append(this.input);
+    this.app = $('#app');
 
     this.init();
+  }
 
+  init() {
+    $("#app").empty();
+
+    this.input = $(`<input type='text'>`);
+    this.span = $(`<span>`);
+
+    this.app.append(Back.init()).append(this.span).append(this.input);
+
+    this.x = Random.getRandomNumbers();
+    this.y = Random.getRandomNumbers();
+
+    Random.progress += 1;
+
+    this.operation = `${this.x} + ${this.y} = `;
+
+    ReturnCodeTextCHTML.chtml(this.operation, this.span.get(0));
+
+    this.eventClick();
+  }
+
+  eventClick() {
     this.input
       .focus()
       .blur(e => {
         this.input.focus();
       })
       .keyup(e => {
-        this.input.val(this.input.val().replace(/[^\d]+/g, ""));
+        this.input.val(this.input.val().replace(/[^\d]+/g, ''));
         let result = this.x + this.y;
         let resultUser = parseInt(this.input.val());
 
         if (result === resultUser) {
           this.init();
-          this.input.focus().val("");
         }
       });
-  }
-
-  init() {
-    $(".MathJax").remove();
-
-    this.x = this.getRandomArbitrary(0, 9);
-    this.y = this.getRandomArbitrary(0, 9);
-
-    this.operation = `${this.x} + ${this.y} = `;
-
-    ReturnCodeTextCHTML.chtml(this.operation, this.span.get(0));
   }
 
   getRandomArbitrary(min, max) {

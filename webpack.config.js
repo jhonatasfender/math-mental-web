@@ -36,7 +36,8 @@ module.exports = {
           {
             loader: "babel-loader",
             options: {
-              babelrc: true
+              babelrc: true,
+              plugins: ['@babel/plugin-proposal-class-properties'],
             }
           }
         ]

@@ -1,4 +1,4 @@
-@import '~bootstrap';
+@import "~bootstrap";
 
 #app {
   font-size: 6rem;
@@ -6,9 +6,13 @@
   align-items: center;
   justify-content: center;
 
-  // span {
-
-  // }
+  span {
+    &.back {
+      position: absolute;
+      top: -80px;
+      left: 16px;
+    }
+  }
 
   input {
     font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
