@@ -1,4 +1,7 @@
 import { Addition } from "../basic-math/arithmetic/addition";
+import { Subtraction } from "../basic-math/arithmetic/subtraction";
+import { Multiplication } from "../basic-math/arithmetic/multiplication";
+import { Division } from "../basic-math/arithmetic/division";
 import { ReturnCodeTextCHTML } from "../../services/mathjax/math-return-code";
 
 export class Home {
@@ -7,9 +10,9 @@ export class Home {
 
     this.valuesCols = [
       { code: "a + b", func: Addition },
-      { code: "a - b", func: null },
-      { code: "a \\times b", func: null },
-      { code: "\\frac{a}{b}", func: null },
+      { code: "a - b", func: Subtraction },
+      { code: "a \\times b", func: Multiplication },
+      { code: "a \\div b", func: Division },
       { code: "\\sqrt{a}", func: null },
       { code: "a^b", func: null },
       { code: "a\\%", func: null },
@@ -28,7 +31,9 @@ export class Home {
             return v.code === action
           })
 
-          new find.func();
+          if (find.func) {
+            new find.func();
+          }
         }
       })
       this.row.append(col)

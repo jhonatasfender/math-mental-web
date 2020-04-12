@@ -4,7 +4,7 @@ import { Back } from "../../../services/always-used/back";
 import { Random } from "../../../services/random/random";
 import { RemoveCharacters } from '../../../services/always-used/remove-characters';
 
-export class Addition {
+export class Subtraction {
   constructor() {
     this.app = $('#app');
 
@@ -24,7 +24,7 @@ export class Addition {
 
     Random.progress += 1;
 
-    this.operation = `${this.x} + ${this.y} = `;
+    this.operation = `${this.x} - ${this.y} = `;
 
     ReturnCodeTextCHTML.chtml(this.operation, this.span.get(0));
 
@@ -39,9 +39,9 @@ export class Addition {
       })
       .keyup(e => {
         this.input.val(RemoveCharacters.remove(this.input.val()));
-        let result = this.x + this.y;
+        let result = this.x - this.y;
         let resultUser = parseInt(this.input.val());
-
+        console.log(result);
         if (result === resultUser) {
           this.init();
         }
