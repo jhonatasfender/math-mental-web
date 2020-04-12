@@ -7167,6 +7167,14 @@ a.text-dark:hover, a.text-dark:focus {
     padding: 1px 0; }
     #app input:focus {
       outline: none; }
+    #app input::-webkit-outer-spin-button, #app input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */ }
+    #app input[type="number"] {
+      -moz-appearance: textfield;
+      /* Firefox */ }
 
 
 /*# sourceMappingURL=main.css.map*/

@@ -41,7 +41,7 @@ export class Subtraction {
         this.input.val(RemoveCharacters.remove(this.input.val()));
         let result = this.x - this.y;
         let resultUser = parseInt(this.input.val());
-        console.log(result);
+
         if (result === resultUser) {
           this.init();
         }

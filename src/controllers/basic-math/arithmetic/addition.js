@@ -14,7 +14,7 @@ export class Addition {
   init() {
     $("#app").empty();
 
-    this.input = $(`<input type='text'>`);
+    this.input = $(`<input type='number'>`);
     this.span = $(`<span>`);
 
     this.app.append(Back.init()).append(this.span).append(this.input);
@@ -38,7 +38,6 @@ export class Addition {
         this.input.focus();
       })
       .keyup(e => {
-        this.input.val(RemoveCharacters.remove(this.input.val()));
         let result = this.x + this.y;
         let resultUser = parseInt(this.input.val());
 
