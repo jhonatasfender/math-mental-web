@@ -7140,6 +7140,9 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-size: 10vw; }
+  @media (min-width: 992px) {
+    body #app .row.home {
+      font-size: 7vw; } }
   body #app {
     display: flex;
     align-items: center;
@@ -7148,6 +7151,8 @@ body {
       position: absolute;
       top: -7vw;
       left: 16px; }
+    body #app .MathJax:focus {
+      outline: none; }
     body #app input {
       font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
       margin-top: 6.7vw;

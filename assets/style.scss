@@ -1,5 +1,15 @@
 @import "~bootstrap";
 body {
+  @include media-breakpoint-up(lg) {
+    #app {
+      .row {
+        &.home {
+          font-size: 7vw;
+        }
+      }
+    }
+  }
+
   font-size: 10vw;
 
   #app {
@@ -12,6 +22,12 @@ body {
         position: absolute;
         top: -7vw;
         left: 16px;
+      }
+    }
+
+    .MathJax {
+      &:focus {
+        outline: none;
       }
     }
 

@@ -18,13 +18,13 @@ export class Home {
       { code: "a\\%", func: null },
     ];
 
-    this.row = $("<div/>").addClass("row");
+    this.row = $("<div/>").addClass("row home");
 
     for (const object of this.valuesCols) {
-      let col = $("<div/>").addClass("col-sm-5 col-md-4").attr("function", object.code);
+      let col = $("<div/>").addClass("col-sm-5 col-md-4 col-lg-3").attr("function", object.code);
       col.html(ReturnCodeTextCHTML.chtml(object.code, col.get(0)));
-      col.click(e => {
-        let action = $(e.target).attr("function") ? $(e.target).attr("function") : $(e.target).parents("div.col-4").attr("function");
+      col.on("click", e => {
+        let action = $(e.target).attr("function") ? $(e.target).attr("function") : $(e.target).parents("div[class*=col]").attr("function");
 
         if (action) {
           let find = this.valuesCols.find((v) => {
