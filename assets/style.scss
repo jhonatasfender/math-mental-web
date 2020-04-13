@@ -1,68 +1,74 @@
 @import "~bootstrap";
 body {
-  @include media-breakpoint-up(lg) {
-    #app {
-      .row {
-        &.home {
-          font-size: 7vw;
+  .container-fluid {
+    @include media-breakpoint-up(lg) {
+      #app {
+        .row {
+          &.home {
+            font-size: 7vw;
+          }
         }
       }
     }
-  }
 
-  font-size: 10vw;
+    font-size: 10vw;
 
-  #app {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    #app {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-    span {
-      &.back {
-        position: absolute;
-        top: -7vw;
-        left: 16px;
-      }
-    }
-
-    .MathJax {
-      &:focus {
-        outline: none;
-      }
-    }
-
-    input {
-      font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
-      margin-top: 6.7vw;
-      width: 205px;
-      border: none;
-      display: inline-block;
-      text-align: left;
-      line-height: 2;
-      text-indent: 25px;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 100%;
-      letter-spacing: normal;
-      word-wrap: normal;
-      word-spacing: normal;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 1px 0;
-
-      &:focus {
-        outline: none;
+      &.full {
+        height: 100vh;
       }
 
-      &::-webkit-outer-spin-button,
-      &::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      span {
+        &.back {
+          position: absolute;
+          top: -7vw;
+          left: 16px;
+        }
       }
 
-      &[type="number"] {
-        -moz-appearance: textfield; /* Firefox */
+      .MathJax {
+        &:focus {
+          outline: none;
+        }
+      }
+
+      input {
+        font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
+        margin-top: 6.7vw;
+        width: auto;
+        border: none;
+        display: inline-block;
+        text-align: left;
+        line-height: 2;
+        text-indent: 6px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 100%;
+        letter-spacing: normal;
+        word-wrap: normal;
+        word-spacing: normal;
+        white-space: nowrap;
+        direction: ltr;
+        padding: 1px 0;
+
+        &:focus {
+          outline: none;
+        }
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          /* display: none; <- Crashes Chrome on hover */
+          -webkit-appearance: none;
+          margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+
+        &[type="number"] {
+          -moz-appearance: textfield; /* Firefox */
+        }
       }
     }
   }

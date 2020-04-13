@@ -7138,30 +7138,32 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6; } }
 
-body {
+body .container-fluid, body .container-sm, body .container-md, body .container-lg, body .container-xl {
   font-size: 10vw; }
   @media (min-width: 992px) {
-    body #app .row.home {
+    body .container-fluid #app .row.home, body .container-sm #app .row.home, body .container-md #app .row.home, body .container-lg #app .row.home, body .container-xl #app .row.home {
       font-size: 7vw; } }
-  body #app {
+  body .container-fluid #app, body .container-sm #app, body .container-md #app, body .container-lg #app, body .container-xl #app {
     display: flex;
     align-items: center;
     justify-content: center; }
-    body #app span.back {
+    body .container-fluid #app.full, body .container-sm #app.full, body .container-md #app.full, body .container-lg #app.full, body .container-xl #app.full {
+      height: 100vh; }
+    body .container-fluid #app span.back, body .container-sm #app span.back, body .container-md #app span.back, body .container-lg #app span.back, body .container-xl #app span.back {
       position: absolute;
       top: -7vw;
       left: 16px; }
-    body #app .MathJax:focus {
+    body .container-fluid #app .MathJax:focus, body .container-sm #app .MathJax:focus, body .container-md #app .MathJax:focus, body .container-lg #app .MathJax:focus, body .container-xl #app .MathJax:focus {
       outline: none; }
-    body #app input {
+    body .container-fluid #app input, body .container-sm #app input, body .container-md #app input, body .container-lg #app input, body .container-xl #app input {
       font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
       margin-top: 6.7vw;
-      width: 205px;
+      width: auto;
       border: none;
       display: inline-block;
       text-align: left;
       line-height: 2;
-      text-indent: 25px;
+      text-indent: 6px;
       font-style: normal;
       font-weight: normal;
       font-size: 100%;
@@ -7171,14 +7173,14 @@ body {
       white-space: nowrap;
       direction: ltr;
       padding: 1px 0; }
-      body #app input:focus {
+      body .container-fluid #app input:focus, body .container-sm #app input:focus, body .container-md #app input:focus, body .container-lg #app input:focus, body .container-xl #app input:focus {
         outline: none; }
-      body #app input::-webkit-outer-spin-button, body #app input::-webkit-inner-spin-button {
+      body .container-fluid #app input::-webkit-outer-spin-button, body .container-sm #app input::-webkit-outer-spin-button, body .container-md #app input::-webkit-outer-spin-button, body .container-lg #app input::-webkit-outer-spin-button, body .container-xl #app input::-webkit-outer-spin-button, body .container-fluid #app input::-webkit-inner-spin-button, body .container-sm #app input::-webkit-inner-spin-button, body .container-md #app input::-webkit-inner-spin-button, body .container-lg #app input::-webkit-inner-spin-button, body .container-xl #app input::-webkit-inner-spin-button {
         /* display: none; <- Crashes Chrome on hover */
         -webkit-appearance: none;
         margin: 0;
         /* <-- Apparently some margin are still there even though it's hidden */ }
-      body #app input[type="number"] {
+      body .container-fluid #app input[type="number"], body .container-sm #app input[type="number"], body .container-md #app input[type="number"], body .container-lg #app input[type="number"], body .container-xl #app input[type="number"] {
         -moz-appearance: textfield;
         /* Firefox */ }
 

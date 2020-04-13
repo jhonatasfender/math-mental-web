@@ -2,11 +2,11 @@ import { ReturnCodeTextCHTML } from '../../../services/mathjax/math-return-code'
 import { Back } from "../../../services/always-used/back";
 
 import { Random } from "../../../services/random/random";
-import { RemoveCharacters } from '../../../services/always-used/remove-characters';
+import { App } from '../../../services/always-used/app';
 
 export class Addition {
   constructor() {
-    this.app = $('#app');
+    this.app = App.element;
 
     this.init();
   }
@@ -34,15 +34,22 @@ export class Addition {
   eventClick() {
     this.input
       .focus()
+      .each(e => {
+        this.input.css('width', 0);
+      })
       .blur(e => {
         this.input.focus();
       })
       .keyup(e => {
+        this.input.css('width', (this.input.val().length * 5) + 'vw');
+
         let result = this.x + this.y;
         let resultUser = parseInt(this.input.val());
 
         if (result === resultUser) {
-          this.init();
+          setTimeout(() => {
+            this.init();            
+          }, 600);
         }
       });
   }

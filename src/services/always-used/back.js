@@ -7,7 +7,7 @@ export class Back {
     ReturnCodeTextCHTML.chtml('\\hookleftarrow', back.get(0));
 
     back.click(() => {
-      $("#app").empty();
+      $("#app").removeClass('full').empty();
       new Home($("#app"));
     });
 
