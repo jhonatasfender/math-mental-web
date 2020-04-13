@@ -44,7 +44,7 @@ export class Addition {
       .keyup(e => {
         this.input.css('width', (this.input.val().length * 5) + 'vw');
 
-        this.input.val(RemoveCharacters.remove(this.input.val()));
+        this.input.val(RemoveCharacters.remove(this.input.val())).focus();
         let result = this.x + this.y;
         let resultUser = parseInt(this.input.val());
 
