@@ -1,51 +1,49 @@
 @import "~bootstrap";
+body {
+  font-size: 10.5vw;
 
-#app {
-  font-size: 6rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  span {
-    &.back {
-      position: absolute;
-      top: -80px;
-      left: 16px;
-    }
-  }
-
-  input {
-    font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
-    margin-top: 60px;
-    width: 205px;
-    border: none;
-    display: inline-block;
-    text-align: left;
-    line-height: 2;
-    text-indent: 25px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 100%;
-    letter-spacing: normal;
-    word-wrap: normal;
-    word-spacing: normal;
-    white-space: nowrap;
-    direction: ltr;
-    padding: 1px 0;
-
-    &:focus {
-      outline: none;
+  #app {
+    span {
+      &.back {
+        position: absolute;
+        top: -7vw;
+        left: 16px;
+      }
     }
 
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      /* display: none; <- Crashes Chrome on hover */
-      -webkit-appearance: none;
-      margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-    }
+    input {
+      font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
+      margin-top: 60px;
+      width: 205px;
+      border: none;
+      display: inline-block;
+      text-align: left;
+      line-height: 2;
+      text-indent: 25px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 100%;
+      letter-spacing: normal;
+      word-wrap: normal;
+      word-spacing: normal;
+      white-space: nowrap;
+      direction: ltr;
+      padding: 1px 0;
 
-    &[type="number"] {
-      -moz-appearance: textfield; /* Firefox */
+      &:focus {
+        outline: none;
+      }
+
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+      }
+
+      &[type="number"] {
+        -moz-appearance: textfield; /* Firefox */
+      }
     }
   }
 }
