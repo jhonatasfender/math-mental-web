@@ -15,7 +15,7 @@ export class Division {
   init() {
     $("#app").empty();
 
-    this.input = $(`<input type='number'>`);
+    this.input = $(`<input type='tel'>`);
     this.span = $(`<span>`);
 
     this.app.append(Back.init()).append(this.span).append(this.input);

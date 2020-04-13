@@ -3,6 +3,7 @@ import { Back } from "../../../services/always-used/back";
 
 import { Random } from "../../../services/random/random";
 import { App } from '../../../services/always-used/app';
+import { RemoveCharacters } from '../../../services/always-used/remove-characters';
 
 export class Addition {
   constructor() {
@@ -14,7 +15,7 @@ export class Addition {
   init() {
     $("#app").empty();
 
-    this.input = $(`<input type='number'>`);
+    this.input = $(`<input type='tel'>`);
     this.span = $(`<span>`);
 
     this.app.append(Back.init()).append(this.span).append(this.input);
@@ -43,6 +44,7 @@ export class Addition {
       .keyup(e => {
         this.input.css('width', (this.input.val().length * 5) + 'vw');
 
+        this.input.val(RemoveCharacters.remove(this.input.val()));
         let result = this.x + this.y;
         let resultUser = parseInt(this.input.val());
 
