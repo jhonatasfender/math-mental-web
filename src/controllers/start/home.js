@@ -21,7 +21,7 @@ export class Home {
     this.row = $("<div/>").addClass("row");
 
     for (const object of this.valuesCols) {
-      let col = $("<div/>").addClass("col-4").attr("function", object.code);
+      let col = $("<div/>").addClass("col-sm-5 col-md-4").attr("function", object.code);
       col.html(ReturnCodeTextCHTML.chtml(object.code, col.get(0)));
       col.click(e => {
         let action = $(e.target).attr("function") ? $(e.target).attr("function") : $(e.target).parents("div.col-4").attr("function");

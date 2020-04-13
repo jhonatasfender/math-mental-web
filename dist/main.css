@@ -7139,7 +7139,7 @@ a.text-dark:hover, a.text-dark:focus {
     border-color: #dee2e6; } }
 
 body {
-  font-size: 10.5vw; }
+  font-size: 10vw; }
   body #app {
     display: flex;
     align-items: center;
