@@ -7140,38 +7140,42 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-size: 10.5vw; }
-  body #app span.back {
-    position: absolute;
-    top: -7vw;
-    left: 16px; }
-  body #app input {
-    font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
-    margin-top: 60px;
-    width: 205px;
-    border: none;
-    display: inline-block;
-    text-align: left;
-    line-height: 2;
-    text-indent: 25px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 100%;
-    letter-spacing: normal;
-    word-wrap: normal;
-    word-spacing: normal;
-    white-space: nowrap;
-    direction: ltr;
-    padding: 1px 0; }
-    body #app input:focus {
-      outline: none; }
-    body #app input::-webkit-outer-spin-button, body #app input::-webkit-inner-spin-button {
-      /* display: none; <- Crashes Chrome on hover */
-      -webkit-appearance: none;
-      margin: 0;
-      /* <-- Apparently some margin are still there even though it's hidden */ }
-    body #app input[type="number"] {
-      -moz-appearance: textfield;
-      /* Firefox */ }
+  body #app {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    body #app span.back {
+      position: absolute;
+      top: -7vw;
+      left: 16px; }
+    body #app input {
+      font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
+      margin-top: 60px;
+      width: 205px;
+      border: none;
+      display: inline-block;
+      text-align: left;
+      line-height: 2;
+      text-indent: 25px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 100%;
+      letter-spacing: normal;
+      word-wrap: normal;
+      word-spacing: normal;
+      white-space: nowrap;
+      direction: ltr;
+      padding: 1px 0; }
+      body #app input:focus {
+        outline: none; }
+      body #app input::-webkit-outer-spin-button, body #app input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+        -webkit-appearance: none;
+        margin: 0;
+        /* <-- Apparently some margin are still there even though it's hidden */ }
+      body #app input[type="number"] {
+        -moz-appearance: textfield;
+        /* Firefox */ }
 
 
 /*# sourceMappingURL=main.css.map*/
