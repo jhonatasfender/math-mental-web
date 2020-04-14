@@ -2,8 +2,8 @@ import { ReturnCodeTextCHTML } from '../../../services/mathjax/math-return-code'
 import { Back } from "../../../services/always-used/back";
 
 import { Random } from "../../../services/random/random";
-import { RemoveCharacters } from '../../../services/always-used/remove-characters';
 import { App } from '../../../services/always-used/app';
+import { Keyboard } from '../../../services/keyboard/keyboard';
 
 export class Division {
   constructor() {
@@ -15,10 +15,14 @@ export class Division {
   init() {
     $("#app").empty();
 
-    this.input = $(`<input type='tel'>`);
-    this.span = $(`<span>`);
+    let row = $(`<div>`).addClass('row');
+    this.div = $(`<div>`).addClass('col-12');
 
-    this.app.append(Back.init()).append(this.span).append(this.input);
+    this.resultUser = '';
+
+    row.append(this.div);
+
+    this.app.append(Back.init()).append(row)
 
     this.x = Random.getRandomNumbers();
     this.y = Random.getRandomNumbers();
@@ -27,38 +31,30 @@ export class Division {
 
     this.operation = `${this.x} \\div ${this.y} = `;
 
-    ReturnCodeTextCHTML.chtml(this.operation, this.span.get(0));
+    ReturnCodeTextCHTML.chtml(this.operation, this.div.get(0));
 
-    this.eventClick();
-  }
+    Keyboard.init(e => {
+      let action = $(e.target).attr("data-key") ? $(e.target).attr("data-key") : $(e.target).parents("button").attr("data-key");
+      this.div.empty();
 
-  eventClick() {
-    this.input
-      .focus()
-      .each(e => {
-        this.input.css('width', 0);
-      })
-      .blur(e => {
-        this.input.focus();
-      })
-      .keyup(e => {
-        this.input.css('width', (this.input.val().length * 5) + 'vw');
+      if (Keyboard.del === action) {
+        this.operation = this.operation.slice(-2) !== "= " ? this.operation.slice(0, -1) : this.operation;
+        this.resultUser = this.resultUser.slice(0, -1)
+      } else {
+        this.operation += action
 
-        this.input.val(RemoveCharacters.remove(this.input.val())).focus();
         let result = this.x / this.y;
-        let resultUser = parseInt(this.input.val());
+        this.resultUser += action.toString();
 
-        if (result === resultUser) {
+        if (result == this.resultUser) {
           setTimeout(() => {
-            this.init();            
+            this.init();
           }, 600);
         }
-      });
-  }
+      }
 
-  getRandomArbitrary(min, max) {
-    min = parseInt(min);
-    max = parseInt(max);
-    return parseInt(Math.random() * (max - min) + min);
+      this.div.empty();
+      ReturnCodeTextCHTML.chtml(this.operation, this.div.get(0));
+    });
   }
 }

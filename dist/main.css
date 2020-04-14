@@ -7143,46 +7143,34 @@ body .container-fluid, body .container-sm, body .container-md, body .container-l
   @media (min-width: 992px) {
     body .container-fluid #app .row.home, body .container-sm #app .row.home, body .container-md #app .row.home, body .container-lg #app .row.home, body .container-xl #app .row.home {
       font-size: 7vw; } }
-  body .container-fluid #app, body .container-sm #app, body .container-md #app, body .container-lg #app, body .container-xl #app {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-    body .container-fluid #app.full, body .container-sm #app.full, body .container-md #app.full, body .container-lg #app.full, body .container-xl #app.full {
-      height: 100vh; }
-    body .container-fluid #app span.back, body .container-sm #app span.back, body .container-md #app span.back, body .container-lg #app span.back, body .container-xl #app span.back {
-      position: absolute;
-      top: -7vw;
-      left: 16px; }
-    body .container-fluid #app .MathJax:focus, body .container-sm #app .MathJax:focus, body .container-md #app .MathJax:focus, body .container-lg #app .MathJax:focus, body .container-xl #app .MathJax:focus {
-      outline: none; }
-    body .container-fluid #app input, body .container-sm #app input, body .container-md #app input, body .container-lg #app input, body .container-xl #app input {
-      font-family: MJXZERO, MJXTEX, MJXTEX-I, MJXTEX-S1, MJXTEX-A;
-      margin-top: 6.7vw;
+  body .container-fluid #app.full, body .container-sm #app.full, body .container-md #app.full, body .container-lg #app.full, body .container-xl #app.full {
+    height: 100vh; }
+  body .container-fluid #app span.back, body .container-sm #app span.back, body .container-md #app span.back, body .container-lg #app span.back, body .container-xl #app span.back {
+    position: absolute;
+    top: -7vw;
+    left: 16px;
+    z-index: 1; }
+  body .container-fluid #app .MathJax:focus, body .container-sm #app .MathJax:focus, body .container-md #app .MathJax:focus, body .container-lg #app .MathJax:focus, body .container-xl #app .MathJax:focus {
+    outline: none; }
+  body .container-fluid #app .numeric-keypad, body .container-sm #app .numeric-keypad, body .container-md #app .numeric-keypad, body .container-lg #app .numeric-keypad, body .container-xl #app .numeric-keypad {
+    position: fixed;
+    bottom: 13px;
+    font-size: 3vh;
+    width: 100%; }
+    body .container-fluid #app .numeric-keypad .numeric-keypad-key, body .container-sm #app .numeric-keypad .numeric-keypad-key, body .container-md #app .numeric-keypad .numeric-keypad-key, body .container-lg #app .numeric-keypad .numeric-keypad-key, body .container-xl #app .numeric-keypad .numeric-keypad-key {
       width: auto;
-      border: none;
-      display: inline-block;
-      text-align: left;
-      line-height: 2;
-      text-indent: 6px;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 100%;
-      letter-spacing: normal;
-      word-wrap: normal;
-      word-spacing: normal;
-      white-space: nowrap;
-      direction: ltr;
-      padding: 1px 0; }
-      body .container-fluid #app input:focus, body .container-sm #app input:focus, body .container-md #app input:focus, body .container-lg #app input:focus, body .container-xl #app input:focus {
-        outline: none; }
-      body .container-fluid #app input::-webkit-outer-spin-button, body .container-sm #app input::-webkit-outer-spin-button, body .container-md #app input::-webkit-outer-spin-button, body .container-lg #app input::-webkit-outer-spin-button, body .container-xl #app input::-webkit-outer-spin-button, body .container-fluid #app input::-webkit-inner-spin-button, body .container-sm #app input::-webkit-inner-spin-button, body .container-md #app input::-webkit-inner-spin-button, body .container-lg #app input::-webkit-inner-spin-button, body .container-xl #app input::-webkit-inner-spin-button {
-        /* display: none; <- Crashes Chrome on hover */
-        -webkit-appearance: none;
-        margin: 0;
-        /* <-- Apparently some margin are still there even though it's hidden */ }
-      body .container-fluid #app input[type="number"], body .container-sm #app input[type="number"], body .container-md #app input[type="number"], body .container-lg #app input[type="number"], body .container-xl #app input[type="number"] {
-        -moz-appearance: textfield;
-        /* Firefox */ }
+      padding: 5px; }
+      body .container-fluid #app .numeric-keypad .numeric-keypad-key button, body .container-sm #app .numeric-keypad .numeric-keypad-key button, body .container-md #app .numeric-keypad .numeric-keypad-key button, body .container-lg #app .numeric-keypad .numeric-keypad-key button, body .container-xl #app .numeric-keypad .numeric-keypad-key button {
+        width: 100%;
+        height: 100%;
+        border: none; }
+        body .container-fluid #app .numeric-keypad .numeric-keypad-key button.disabled, body .container-sm #app .numeric-keypad .numeric-keypad-key button.disabled, body .container-md #app .numeric-keypad .numeric-keypad-key button.disabled, body .container-lg #app .numeric-keypad .numeric-keypad-key button.disabled, body .container-xl #app .numeric-keypad .numeric-keypad-key button.disabled {
+          background: #b1b1b1; }
+        body .container-fluid #app .numeric-keypad .numeric-keypad-key button:focus, body .container-sm #app .numeric-keypad .numeric-keypad-key button:focus, body .container-md #app .numeric-keypad .numeric-keypad-key button:focus, body .container-lg #app .numeric-keypad .numeric-keypad-key button:focus, body .container-xl #app .numeric-keypad .numeric-keypad-key button:focus {
+          outline: none; }
+        body .container-fluid #app .numeric-keypad .numeric-keypad-key button img, body .container-sm #app .numeric-keypad .numeric-keypad-key button img, body .container-md #app .numeric-keypad .numeric-keypad-key button img, body .container-lg #app .numeric-keypad .numeric-keypad-key button img, body .container-xl #app .numeric-keypad .numeric-keypad-key button img {
+          width: 9vw;
+          max-width: 61px; }
 
 
 /*# sourceMappingURL=main.css.map*/
