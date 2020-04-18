@@ -7172,7 +7172,7 @@ body .container-fluid, body .container-sm, body .container-md, body .container-l
           width: 9vw;
           max-width: 61px; }
   body .container-fluid #app .history, body .container-sm #app .history, body .container-md #app .history, body .container-lg #app .history, body .container-xl #app .history {
-    width: 6vh;
+    width: 4vh;
     position: absolute;
     top: 21px;
     right: 14px; }

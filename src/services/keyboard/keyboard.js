@@ -10,7 +10,7 @@ export class Keyboard {
       7, 8, 9, '-',
       4, 5, 6, '',
       1, 2, 3, '',
-      0, '.', this.del, ''
+      '.', 0, this.del, ''
     ];
 
     this.numPadEl = $('<div/>').attr('id', 'numeric-keypad').addClass('numeric-keypad row');

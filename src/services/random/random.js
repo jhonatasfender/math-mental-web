@@ -21,7 +21,7 @@ export class Random {
 
   static history(app, operations, code, back) {
     return $('<img/>').attr('src', 'assets/img/history-solid.svg').addClass('history')
-      .click(e => {
+      .on('click tab', e => {
         app.empty();
         let row = $(`<div/>`).addClass('row history-list');
 
@@ -37,7 +37,7 @@ export class Random {
         let historyBack = $('<img/>')
           .attr('src', 'assets/img/backward-solid.svg')
           .addClass('history-back')
-          .click(back)
+          .on('click tab', back)
 
         app.append(row).append(historyBack)
       });
