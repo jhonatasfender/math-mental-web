@@ -38,7 +38,8 @@ export class Keyboard {
 
     $(document.body).off().bind("keydown", e => {
       let key = e.originalEvent.key;
-      let el = this.numPadEl.find(`*[data-key=${key}]`);
+
+      let el = this.numPadEl.find(`*[data-key="${key}"]`);
 
       if (el.get(0)) {
         el.click();
