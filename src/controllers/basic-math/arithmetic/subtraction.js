@@ -8,6 +8,7 @@ import { Keyboard } from '../../../services/keyboard/keyboard';
 export class Subtraction {
   constructor() {
     this.app = App.element;
+    this.operations = [];
 
     this.init();
   }
@@ -15,19 +16,26 @@ export class Subtraction {
   init() {
     $("#app").empty();
 
-    let row = $(`<div>`).addClass('row');
-    this.div = $(`<div>`).addClass('col-12');
+    let row = $(`<div/>`).addClass('row');
+    this.div = $(`<div/>`).addClass('col-12');
 
     this.resultUser = '';
 
     row.append(this.div);
 
     this.app.append(Back.init()).append(row)
+    let random = Random.getRandom(this.operations);
+    [this.x, this.y] = random;
 
-    this.x = Random.getRandomNumbers();
-    this.y = Random.getRandomNumbers();
-
-    Random.progress += 1;
+    this.app.append(Random.history(
+      this.app, this.operations,
+      values => {
+        return `${values.x} - ${values.y} = ${values.x - values.y}`
+      },
+      e => {
+        this.init()
+      }
+    ))
 
     this.operation = `${this.x} - ${this.y} = `;
 
@@ -47,6 +55,7 @@ export class Subtraction {
         this.resultUser += action.toString();
 
         if (result == this.resultUser) {
+          this.operations.push({ x: this.x, y: this.y })
           setTimeout(() => {
             this.init();
           }, 600);

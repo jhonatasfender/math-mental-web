@@ -7171,6 +7171,19 @@ body .container-fluid, body .container-sm, body .container-md, body .container-l
         body .container-fluid #app .numeric-keypad .numeric-keypad-key button img, body .container-sm #app .numeric-keypad .numeric-keypad-key button img, body .container-md #app .numeric-keypad .numeric-keypad-key button img, body .container-lg #app .numeric-keypad .numeric-keypad-key button img, body .container-xl #app .numeric-keypad .numeric-keypad-key button img {
           width: 9vw;
           max-width: 61px; }
+  body .container-fluid #app .history, body .container-sm #app .history, body .container-md #app .history, body .container-lg #app .history, body .container-xl #app .history {
+    width: 6vh;
+    position: absolute;
+    top: 21px;
+    right: 14px; }
+  body .container-fluid #app .history-back, body .container-sm #app .history-back, body .container-md #app .history-back, body .container-lg #app .history-back, body .container-xl #app .history-back {
+    position: absolute;
+    width: 4vw;
+    top: 7px;
+    right: 10px; }
+  body .container-fluid #app .history-list .col-3, body .container-sm #app .history-list .col-3, body .container-md #app .history-list .col-3, body .container-lg #app .history-list .col-3, body .container-xl #app .history-list .col-3 {
+    height: 4vw;
+    font-size: 3vw; }
 
 
 /*# sourceMappingURL=main.css.map*/

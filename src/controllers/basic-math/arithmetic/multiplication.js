@@ -9,14 +9,16 @@ export class Multiplication {
   constructor() {
     this.app = App.element;
 
+    this.operations = [];
+
     this.init();
   }
 
   init() {
-    $("#app").empty();
+    this.app.empty();
 
-    let row = $(`<div>`).addClass('row');
-    this.div = $(`<div>`).addClass('col-12');
+    let row = $(`<div/>`).addClass('row');
+    this.div = $(`<div/>`).addClass('col-12');
 
     this.resultUser = '';
 
@@ -24,10 +26,18 @@ export class Multiplication {
 
     this.app.append(Back.init()).append(row)
 
-    this.x = Random.getRandomNumbers();
-    this.y = Random.getRandomNumbers();
+    let random = Random.getRandom(this.operations);
+    [this.x, this.y] = random;
 
-    Random.progress += 1;
+    this.app.append(Random.history(
+      this.app, this.operations,
+      values => {
+        return `${values.x} \\times ${values.y} = ${values.x * values.y}`
+      },
+      e => {
+        this.init()
+      }
+    ))
 
     this.operation = `${this.x} \\times ${this.y} = `;
 
@@ -47,6 +57,7 @@ export class Multiplication {
         this.resultUser += action.toString();
 
         if (result == this.resultUser) {
+          this.operations.push({ x: this.x, y: this.y })
           setTimeout(() => {
             this.init();
           }, 600);

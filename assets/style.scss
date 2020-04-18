@@ -63,6 +63,27 @@ body {
           }
         }
       }
+
+      .history {
+        width: 6vh;
+        position: absolute;
+        top: 21px;
+        right: 14px;
+      }
+
+      .history-back {
+        position: absolute;
+        width: 4vw;
+        top: 7px;
+        right: 10px;
+      }
+
+      .history-list {
+        .col-3 {
+          height: 4vw;
+          font-size: 3vw;
+        }
+      }
     }
   }
 }
