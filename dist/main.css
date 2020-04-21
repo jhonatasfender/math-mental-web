@@ -7182,7 +7182,6 @@ body .container-fluid, body .container-sm, body .container-md, body .container-l
     top: 7px;
     right: 10px; }
   body .container-fluid #app .history-list .col-3, body .container-sm #app .history-list .col-3, body .container-md #app .history-list .col-3, body .container-lg #app .history-list .col-3, body .container-xl #app .history-list .col-3 {
-    height: 4vw;
     font-size: 3vw; }
 
 

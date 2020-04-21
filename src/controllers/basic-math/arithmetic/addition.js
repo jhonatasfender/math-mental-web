@@ -30,8 +30,11 @@ export class Addition {
 
     this.app.append(Random.history(
       this.app, this.operations,
-      values => {
-        return `${values.x} + ${values.y} = ${values.x + values.y}`
+      order, x, y => {
+        return ` ${x} + ${y} = ${order[x] && order[x][y] ? order[x][y] : ''}`
+      },
+      v => {
+        return v.x + v.y
       },
       e => {
         this.init()
