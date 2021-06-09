@@ -1,10 +1,10 @@
 
 import loadScript from 'load-script';
-import { createContext, memo, useEffect, useState } from 'react';
+import { createContext,  useEffect, useState } from 'react';
 
 export const ContextMath = createContext(null)
 
-const Provider = memo(({ children }) => {
+const Provider = ({ children }) => {
   const [MathJax, setMathJax] = useState({});
   const [isMathJaxLoaded, setIsMathJaxLoaded] = useState(false);
 
@@ -28,6 +28,6 @@ const Provider = memo(({ children }) => {
       {children}
     </ContextMath.Provider>
   )
-})
+}
 
 export default Provider;
