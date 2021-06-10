@@ -1,5 +1,5 @@
-import Node from "@components/Latex";
+import Node from '@components/Latex';
 
 export default function Sum() {
-  return <Node>x + y</Node>
+  return <Node>x + y</Node>;
 }

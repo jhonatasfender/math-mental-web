@@ -1,5 +1,5 @@
-import Node from "@components/Latex";
+import Node from '@components/Latex';
 
 export default function Squared() {
-  return <Node>{`\\sqrt{x}`}</Node>
+  return <Node>{`\\sqrt{x}`}</Node>;
 }

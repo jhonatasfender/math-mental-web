@@ -13,15 +13,17 @@ export default function Examples() {
        `}
       </Node>
       <Node>{`L' = {L}{\\sqrt{1-\\frac{v^2}{c^2}}} `}</Node>
-      <Node>{`
-        B' =-\\nabla \\times E, E' =\\nabla \\times B - 4\\pi j,
-      `}</Node>
-      <Node>{`
-        \\lim_{x\\to 0}{\\frac{e^x-1}{2x}}
-        \\overset{\\left[\\frac{0}{0}\\right]}{\\underset{\\mathrm{H}}{=}}
-        \\lim_{x\\to 0}{\\frac{e^x}{2}}={\\frac{1}{2}}
-      `}</Node>
+      <Node>
+        {`B' =-\\nabla \\times E, E' =\\nabla \\times B - 4\\pi j,`}
+      </Node>
+      <Node>
+        {`
+          \\lim_{x\\to 0}{\\frac{e^x-1}{2x}}
+          \\overset{\\left[\\frac{0}{0}\\right]}{\\underset{\\mathrm{H}}{=}}
+          \\lim_{x\\to 0}{\\frac{e^x}{2}}={\\frac{1}{2}}
+        `}
+      </Node>
       <Node>x^2-x</Node>
     </>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import Node from "@components/Latex";
+import Node from '@components/Latex';
 
 export default function Division() {
-  return <Node>x \div y</Node>
+  return <Node>x \div y</Node>;
 }
