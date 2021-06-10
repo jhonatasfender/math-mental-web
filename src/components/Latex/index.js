@@ -11,7 +11,7 @@ const Node = ({ children }) => {
   const MathJax = useContext(ContextMath)
 
   useEffect(() => {
-    if (MathJax) {      
+    if (MathJax) {
       ref.current.innerHTML = ''
       ref.current.appendChild(MathJax.tex2chtml(children))
     }

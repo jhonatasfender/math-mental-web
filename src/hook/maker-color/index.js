@@ -12,6 +12,6 @@ export default function useMakerColor() {
     );
     console.groupEnd();
   }
-  
+
   return [logger]
 }
