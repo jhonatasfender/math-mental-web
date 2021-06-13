@@ -5,12 +5,7 @@ export default function useMakerColor() {
       `%c${text}`,
       `background-color: ${background}; color: ${color}; padding: 2px 4px;`,
     );
-    console.info(
-      new Error('stack').stack
-        .split('\n')
-        .slice(2)
-        .join('\n'),
-    );
+    console.info(new Error('stack').stack.split('\n').slice(2).join('\n'));
     console.groupEnd();
   };
 

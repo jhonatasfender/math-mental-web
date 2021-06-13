@@ -1,19 +1,21 @@
-import Division from '@components/operations/division';
-import Fraction from '@components/operations/fraction';
-import Multiplication from '@components/operations/multiplication';
-import Squared from '@components/operations/squared';
-import Subtraction from '@components/operations/subtraction';
-import Sum from '@components/operations/sum';
+import Node from '@components/latex';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const { push } = useRouter();
+
   const listOptions = [
-    <Sum key="1" />,
-    <Subtraction key="2" />,
-    <Multiplication key="3" />,
-    <Division key="4" />,
-    <Fraction key="5" />,
-    <Squared key="6" />,
+    { href: '/operation/sum', formula: 'x + y' },
+    { href: '/operation/subtraction', formula: 'x - y' },
+    { href: '/operation/multiplication', formula: `x \\times y` },
+    { href: '/operation/division', formula: `x \\div y` },
+    { href: '/operation/fraction', formula: `\\frac{x}{y}` },
+    { href: '/operation/squared', formula: `\\sqrt{x}` },
   ];
 
-  return listOptions;
+  return listOptions.map(({ href, formula }) => (
+    <Node key={href} onClick={() => push(href)}>
+      {formula}
+    </Node>
+  ));
 }

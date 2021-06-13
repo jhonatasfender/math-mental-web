@@ -1,14 +1,22 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "airbnb"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended",
+    "airbnb"
+  ],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 12,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "settings": {
@@ -25,6 +33,9 @@
     "react/jsx-props-no-spreading": "off",
     "import/no-unresolved": "off",
     "react/react-in-jsx-scope": "off",
-    "quotes": ["error", "single", { "allowTemplateLiterals": true }]
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "semi": ["error", "always"],
+    "comma-dangle": [2, "always-multiline"]
   }
 }

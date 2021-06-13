@@ -1,5 +1,6 @@
-import Node from '@components/Latex';
+import Node from '@components/latex';
+import Answer from '../answer';
 
 export default function Sum() {
-  return <Node>x + y</Node>;
+  return <Answer viewing={(result) => <Node>{`x + y = ${result}`}</Node>} />;
 }

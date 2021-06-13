@@ -1,4 +1,4 @@
-import Node from '@components/Latex';
+import Node from '@components/latex';
 
 export default function Division() {
   return <Node>x \div y</Node>;

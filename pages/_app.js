@@ -1,4 +1,4 @@
-import Provider from '@components/Latex/Provider';
+import Provider from '@components/latex/provider';
 
 const App = ({ Component, pageProps }) => (
   <Provider>
