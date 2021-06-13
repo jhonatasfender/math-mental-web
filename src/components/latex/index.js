@@ -12,11 +12,14 @@ const Node = ({ children, ...props }) => {
 
   useEffect(() => {
     if (MathJax) {
+      MathJax.texReset();
+
       ref.current.innerHTML = '';
       const html = MathJax.tex2chtml(children);
       ref.current.appendChild(html);
-      // TODO: verificar o problema do porque não está atualizar o chtml
-      console.log(children, html);
+
+      MathJax.startup.document.clear();
+      MathJax.startup.document.updateDocument();
     }
   }, [children]);
 
