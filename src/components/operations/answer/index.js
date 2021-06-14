@@ -24,26 +24,25 @@ export function Button({ children, onClick, ...props }) {
     </Btn>
   );
 }
+const allowedKeys = [
+  '7',
+  '8',
+  '9',
+  '4',
+  '5',
+  '6',
+  '1',
+  '2',
+  '3',
+  '0',
+  ',',
+  'c',
+];
 
 export default function Answer({ viewing }) {
   const [result, setResult] = useState('');
 
   const callKeys = ({ key }) => {
-    const allowedKeys = [
-      '0',
-      '1',
-      '2',
-      '3',
-      '4',
-      '5',
-      '6',
-      '7',
-      '8',
-      '9',
-      ',',
-      'c',
-    ];
-    console.log(key);
     if (allowedKeys.includes(key) && key !== 'c') {
       setResult((prev) => `${prev}${key}`);
     } else if (allowedKeys.includes(key) && key === 'c') {
@@ -60,7 +59,7 @@ export default function Answer({ viewing }) {
   }, []);
 
   const handleClick = (number) => {
-    setResult((prev) => `${prev}${number}`);
+    setResult(number === 'C' ? '' : (prev) => `${prev}${number}`);
   };
 
   return (
@@ -68,18 +67,11 @@ export default function Answer({ viewing }) {
       {viewing && viewing(result)}
 
       <Buttons>
-        <Button onClick={handleClick}>7</Button>
-        <Button onClick={handleClick}>8</Button>
-        <Button onClick={handleClick}>9</Button>
-        <Button onClick={handleClick}>4</Button>
-        <Button onClick={handleClick}>5</Button>
-        <Button onClick={handleClick}>6</Button>
-        <Button onClick={handleClick}>1</Button>
-        <Button onClick={handleClick}>2</Button>
-        <Button onClick={handleClick}>3</Button>
-        <Button onClick={handleClick}>0</Button>
-        <Button onClick={handleClick}>,</Button>
-        <Button onClick={() => setResult('')}>C</Button>
+        {allowedKeys.map((number) => (
+          <Button key={number} onClick={handleClick}>
+            {number.toUpperCase()}
+          </Button>
+        ))}
       </Buttons>
     </>
   );

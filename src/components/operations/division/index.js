@@ -1,5 +1,8 @@
 import Node from '@components/latex';
+import Answer from '../answer';
 
 export default function Division() {
-  return <Node>x \div y</Node>;
+  return (
+    <Answer viewing={(result) => <Node>{`x \\div y = ${result}`}</Node>} />
+  );
 }
