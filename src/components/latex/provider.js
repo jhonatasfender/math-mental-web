@@ -2,33 +2,31 @@ import useMakerColor from '@hook/maker-color';
 import loadScript from 'load-script';
 import { createContext, useEffect, useState } from 'react';
 
-export const ContextMath = createContext(null);
+export const ContextKatex = createContext(null);
 
 const Provider = ({ children }) => {
   const [logger] = useMakerColor();
 
-  const [MathJax, setMathJax] = useState({});
-  const [isMathJaxLoaded, setIsMathJaxLoaded] = useState(false);
+  const [Katex, setKatex] = useState({});
+  const [isKatexLoaded, setIsKatexLoaded] = useState(false);
 
   const load = () => {
-    logger(`MathJax version: ${window.MathJax.version}`, { color: '#32CD32' });
-    setMathJax(window.MathJax);
-    setIsMathJaxLoaded(true);
+    logger(`Katex version: ${window.katex.version}`, { color: '#32CD32' });
+    setKatex(window.katex);
+    setIsKatexLoaded(true);
   };
 
   useEffect(() => {
-    global.window.MathJax = {
-      options: {
-        skipHtmlTags: ['style'],
-      },
-    };
-    loadScript('https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js', load);
+    loadScript(
+      'https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js',
+      load,
+    );
   }, []);
 
   return (
-    <ContextMath.Provider value={isMathJaxLoaded ? MathJax : null}>
+    <ContextKatex.Provider value={isKatexLoaded ? Katex : null}>
       {children}
-    </ContextMath.Provider>
+    </ContextKatex.Provider>
   );
 };
 

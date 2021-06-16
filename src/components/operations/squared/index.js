@@ -1,5 +1,5 @@
 import Node from '@components/latex';
-import Answer from '../answer';
+import Answer from '@components/answer';
 
 export default function Squared() {
   return (

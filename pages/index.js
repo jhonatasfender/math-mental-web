@@ -14,7 +14,7 @@ export default function Home() {
   ];
 
   return listOptions.map(({ href, formula }) => (
-    <Node key={href} onClick={() => push(href)}>
+    <Node key={href} onClick={() => push(href)} fontSize="4rem">
       {formula}
     </Node>
   ));

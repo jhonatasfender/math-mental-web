@@ -1,35 +1,29 @@
-import { ContextMath } from '@components/latex/provider';
-import { useContext, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import { ContextKatex } from '@components/latex/provider';
+import { useContext, useEffect, useState } from 'react';
+import styled, { css } from 'styled-components';
 
 const Container = styled.div`
-  width: min-content;
+  ${({ fontSize }) => css`
+    width: auto;
+
+    .katex {
+      font-size: ${fontSize || '1rem'};
+      font-family: Roboto, sans-serif;
+    }
+  `}
 `;
 
 const Node = ({ children, ...props }) => {
-  const ref = useRef();
-  const MathJax = useContext(ContextMath);
+  const [html, setHtml] = useState('');
+  const Katex = useContext(ContextKatex);
 
   useEffect(() => {
-    if (MathJax) {
-      MathJax.texReset();
-
-      ref.current.innerHTML = '';
-      const html = MathJax.tex2chtml(children);
-      ref.current.appendChild(html);
-
-      MathJax.startup.document.clear();
-      MathJax.startup.document.updateDocument();
+    if (Katex) {
+      setHtml(Katex.renderToString(children, { throwOnError: false }));
     }
-  }, [children]);
+  }, [children, Katex]);
 
-  return (
-    <Container ref={ref} {...props}>
-      $$
-      {children}
-      $$
-    </Container>
-  );
+  return <Container dangerouslySetInnerHTML={{ __html: html }} {...props} />;
 };
 
 export default Node;
