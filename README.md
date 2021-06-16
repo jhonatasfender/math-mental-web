@@ -12,6 +12,7 @@ https://www.framer.com/api/motion/
 utilizar esse cara como efeito das paginas
 
 https://mybrandnewlogo.com/pt/gerador-de-paleta-de-cores  
+https://coolors.co/palettes/trending  
 Nesse site podemos visualizar as paletas de cores
 utilizar essas cores como padrões do sistema
 

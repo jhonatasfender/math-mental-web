@@ -1,12 +1,12 @@
+import Addition from '@components/operations/addition';
 import Division from '@components/operations/division';
 import Fraction from '@components/operations/fraction';
 import Multiplication from '@components/operations/multiplication';
 import Squared from '@components/operations/squared';
 import Subtraction from '@components/operations/subtraction';
-import Sum from '@components/operations/sum';
 
 const operations = {
-  sum: <Sum />,
+  sum: <Addition />,
   subtraction: <Subtraction />,
   multiplication: <Multiplication />,
   division: <Division />,

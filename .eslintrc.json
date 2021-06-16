@@ -8,8 +8,8 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:prettier/recommended",
     "plugin:react/recommended",
+    "plugin:prettier/recommended",
     "airbnb"
   ],
   "parserOptions": {
@@ -37,6 +37,6 @@
     "prettier/prettier": ["error", { "singleQuote": true }],
     "semi": ["error", "always"],
     "comma-dangle": [2, "always-multiline"],
-    "react/no-unescaped-entities": ["<enabled>", { "forbid": "Array<string>" }]
+    "object-curly-newline": "off"
   }
 }

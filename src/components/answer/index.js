@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Node from '@components/latex';
 import styled from 'styled-components';
 
 const Buttons = styled.div`
@@ -13,9 +14,9 @@ const Btn = styled.button`
   height: 3rem;
 `;
 
-export function Button({ children, onClick, ...props }) {
+export function Button({ children, show, onClick, ...props }) {
   const handleClick = () => {
-    onClick(children);
+    onClick(show);
   };
 
   return (
@@ -59,17 +60,17 @@ export default function Answer({ viewing }) {
   }, []);
 
   const handleClick = (number) => {
-    setResult(number === 'C' ? '' : (prev) => `${prev}${number}`);
+    setResult(number.toUpperCase() === 'C' ? '' : (prev) => `${prev}${number}`);
   };
 
   return (
     <>
-      {viewing && viewing(result)}
+      {viewing && viewing(result, setResult)}
 
       <Buttons>
         {allowedKeys.map((number) => (
-          <Button key={number} onClick={handleClick}>
-            {number.toUpperCase()}
+          <Button key={number} onClick={handleClick} show={number}>
+            <Node>{number.toUpperCase()}</Node>
           </Button>
         ))}
       </Buttons>
