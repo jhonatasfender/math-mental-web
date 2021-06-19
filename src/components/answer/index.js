@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Node from '@components/latex';
 import styled from 'styled-components';
+import Button from './button';
 
 const Buttons = styled.div`
   display: grid;
@@ -9,22 +10,8 @@ const Buttons = styled.div`
   width: min-content;
 `;
 
-const Btn = styled.button`
-  width: 3rem;
-  height: 3rem;
-`;
+const Container = styled.div``;
 
-export function Button({ children, show, onClick, ...props }) {
-  const handleClick = () => {
-    onClick(show);
-  };
-
-  return (
-    <Btn type="button" onClick={handleClick} {...props}>
-      {children}
-    </Btn>
-  );
-}
 const allowedKeys = [
   '7',
   '8',
@@ -46,7 +33,7 @@ export default function Answer({ viewing }) {
   const callKeys = ({ key }) => {
     if (allowedKeys.includes(key) && key !== 'c') {
       setResult((prev) => `${prev}${key}`);
-    } else if (allowedKeys.includes(key) && key === 'c') {
+    } else if (key === 'c' || key === 'Backspace') {
       setResult('');
     }
   };
@@ -64,7 +51,7 @@ export default function Answer({ viewing }) {
   };
 
   return (
-    <>
+    <Container>
       {viewing && viewing(result, setResult)}
 
       <Buttons>
@@ -74,6 +61,6 @@ export default function Answer({ viewing }) {
           </Button>
         ))}
       </Buttons>
-    </>
+    </Container>
   );
 }

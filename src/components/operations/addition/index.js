@@ -1,44 +1,23 @@
 import Answer from '@components/answer';
 import Node from '@components/latex';
-import Pretty from '@components/pretty/index';
-import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import useAddition from './use-addition';
+import Validating from './validating';
 
 /**
  * TODO:
  * agora é preciso executar a deleção do primeiro
  * nível quando não tiver nenhum número para ser sorteado
+ *
+ * está acontecendo um bug muito estranho estou tentando valida
+ * mas não consigo localizar, em alguns cenários quando está gerando
+ * um novo calculo não está aparecendo selecionando a coluna y corretamente
  */
 
-const colY = Array.from({ length: 10 }, (_, i) => i++);
-
-const useAddition = () => {
-  const [question, setQuestion] = useState({ x: 0, y: 0 });
-  const [column, setColumn] = useState(
-    Array.from({ length: 10 }, () => [...colY]),
-  );
-
-  const random = () => {
-    const x = Math.floor(Math.random() * column.length);
-
-    const y = Math.floor(Math.random() * column[x].length);
-
-    column[x].splice(y, 1);
-
-    console.table(column);
-
-    setColumn(column);
-
-    console.log({ x, y });
-
-    setQuestion({ x, y });
-  };
-
-  useEffect(() => {
-    random();
-  }, []);
-
-  return [question.x, question.y, random, column];
-};
+const Container = styled.div`
+  display: flex;
+  gap: 2rem;
+`;
 
 const Addition = () => {
   const [x, y, random, column] = useAddition();
@@ -57,10 +36,10 @@ const Addition = () => {
   };
 
   return (
-    <>
+    <Container>
       <Answer viewing={render} />
-      <Pretty key={new Date().toISOString()}>{column}</Pretty>
-    </>
+      <Validating>{column}</Validating>
+    </Container>
   );
 };
 
