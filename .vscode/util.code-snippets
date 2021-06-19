@@ -1,0 +1,22 @@
+{
+  "Function Component": {
+    "prefix": "fc",
+    "body": [
+      "import Node from '@components/latex';",
+      "import { useEffect } from 'react';",
+      "",
+      "const Addition = () => {",
+      "  useEffect(() => {",
+      "    // eslint-disable-next-line no-console",
+      "    console.log('begin');",
+      "  });",
+      "",
+      "  return <Node>(x^2 + y^2 = z^2)</Node>;",
+      "};",
+      "",
+      "export default Addition;",
+      ""
+    ],
+    "description": "Function Component"
+  }
+}
