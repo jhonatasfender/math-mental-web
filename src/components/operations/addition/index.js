@@ -1,40 +1,55 @@
 import Answer from '@components/answer';
 import Node from '@components/latex';
 import Pretty from '@components/pretty/index';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 /**
  * TODO:
- * estou tendo problemas porque está repedindo
+ * agora é preciso executar a deleção do primeiro
+ * nível quando não tiver nenhum número para ser sorteado
  */
-const addY = Array.from({ length: 10 }, (_, i) => i++);
-const addX = Array.from({ length: 10 }, () => addY);
 
-const Addition = () => {
+const colY = Array.from({ length: 10 }, (_, i) => i++);
+
+const useAddition = () => {
+  const [question, setQuestion] = useState({ x: 0, y: 0 });
+  const [column, setColumn] = useState(
+    Array.from({ length: 10 }, () => [...colY]),
+  );
+
   const random = () => {
-    console.table(addX);
-    const x = Math.floor(Math.random() * addX.length);
+    const x = Math.floor(Math.random() * column.length);
 
-    const y = Math.floor(Math.random() * addX[x - 1].length);
-    addX[x - 1].splice(y, 1);
+    const y = Math.floor(Math.random() * column[x].length);
 
-    return { x, y };
+    column[x].splice(y, 1);
+
+    console.table(column);
+
+    setColumn(column);
+
+    console.log({ x, y });
+
+    setQuestion({ x, y });
   };
 
-  const draw = random();
-  const [x, setX] = useState(draw.x);
-  const [y, setY] = useState(draw.y);
+  useEffect(() => {
+    random();
+  }, []);
+
+  return [question.x, question.y, random, column];
+};
+
+const Addition = () => {
+  const [x, y, random, column] = useAddition();
 
   const render = (result, setResult) => {
     const calc = x + y;
 
     if (parseInt(result, 10) === calc) {
       setTimeout(() => {
-        const { drawX, drawY } = random();
         setResult('');
-
-        setX(drawX);
-        setY(drawY);
+        random();
       }, 1000);
     }
 
@@ -44,7 +59,7 @@ const Addition = () => {
   return (
     <>
       <Answer viewing={render} />
-      <Pretty>{addX}</Pretty>
+      <Pretty key={new Date().toISOString()}>{column}</Pretty>
     </>
   );
 };
