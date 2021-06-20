@@ -24,10 +24,9 @@ module.exports = {
   collectCoverageFrom: [
     '!src/util/utils-test/*',
     '!**/node_modules/**',
-    '!src/**/__snapshots__/*',
-    '!.eslintrc.json',
+    '!*/**/__snapshots__/*',
+    '!*.json',
     '!jest.config.js',
-    '!jsconfig.json',
   ],
 
   // The directory where Jest should output its coverage files

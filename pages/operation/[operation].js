@@ -1,10 +1,10 @@
+import useGetOperation from '@components/operations/index';
 import { useRouter } from 'next/router';
-import getOperation from './list-operation';
 
 export default function Operation() {
   const { query, back } = useRouter();
 
-  const component = getOperation(query.operation);
+  const component = useGetOperation(query.operation);
 
   return (
     <>

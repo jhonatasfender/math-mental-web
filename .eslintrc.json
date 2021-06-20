@@ -9,6 +9,8 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:@next/next/recommended",
+    "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:prettier/recommended",
     "airbnb"
@@ -47,6 +49,9 @@
     "operator-linebreak": "off",
     "react/jsx-one-expression-per-line": "off",
     "import/no-extraneous-dependencies": "off",
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-page-custom-font": "off",
+    "react-hooks/exhaustive-deps": "off"
   }
 }

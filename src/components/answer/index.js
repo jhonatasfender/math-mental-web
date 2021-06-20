@@ -27,7 +27,7 @@ const allowedKeys = [
   'c',
 ];
 
-export default function Answer({ viewing }) {
+export default function Answer({ viewing, ...props }) {
   const [result, setResult] = useState('');
 
   const prevState = (prev, key) => {
@@ -38,15 +38,15 @@ export default function Answer({ viewing }) {
     return `${prev}${key}`;
   };
 
-  const callKeys = ({ key }) => {
-    if (allowedKeys.includes(key) && key !== 'c') {
-      setResult((prev) => prevState(prev, key));
-    } else if (key === 'c' || key === 'Backspace') {
-      setResult('');
-    }
-  };
-
   useEffect(() => {
+    const callKeys = ({ key }) => {
+      if (allowedKeys.includes(key) && key !== 'c') {
+        setResult((prev) => prevState(prev, key));
+      } else if (key === 'c' || key === 'Backspace') {
+        setResult('');
+      }
+    };
+
     window.addEventListener('keydown', callKeys);
 
     return () => {
@@ -61,7 +61,7 @@ export default function Answer({ viewing }) {
   };
 
   return (
-    <Container>
+    <Container {...props}>
       {viewing && viewing(result, setResult)}
 
       <Buttons>
