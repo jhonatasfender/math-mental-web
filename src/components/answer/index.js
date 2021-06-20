@@ -30,9 +30,17 @@ const allowedKeys = [
 export default function Answer({ viewing }) {
   const [result, setResult] = useState('');
 
+  const prevState = (prev, key) => {
+    if (key === ',' && (prev.match(/,/g) || []).length === 1) {
+      return prev;
+    }
+
+    return `${prev}${key}`;
+  };
+
   const callKeys = ({ key }) => {
     if (allowedKeys.includes(key) && key !== 'c') {
-      setResult((prev) => `${prev}${key}`);
+      setResult((prev) => prevState(prev, key));
     } else if (key === 'c' || key === 'Backspace') {
       setResult('');
     }
@@ -47,7 +55,9 @@ export default function Answer({ viewing }) {
   }, []);
 
   const handleClick = (number) => {
-    setResult(number.toUpperCase() === 'C' ? '' : (prev) => `${prev}${number}`);
+    setResult(
+      number.toUpperCase() === 'C' ? '' : (prev) => prevState(prev, number),
+    );
   };
 
   return (

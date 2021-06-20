@@ -5,7 +5,7 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@hook/*": ["src/hook/*"],
-      "@utils-test/*": ["src/util/test/*"]
+      "@utils-test/*": ["src/util/utils-test/*"]
     }
   },
   "typeAcquisition": {

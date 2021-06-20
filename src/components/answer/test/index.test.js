@@ -1,8 +1,9 @@
 import Answer from '@components/answer';
 import Node from '@components/latex';
-import { fireEvent, render } from '@testing-library/react';
+import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { buttons } from '@utils-test/buttons';
+import { keyDownTyping } from '@utils-test/typing';
 
 describe('<Answer />', () => {
   const renderer = (viewing) => {
@@ -50,32 +51,44 @@ describe('<Answer />', () => {
 
     const { container } = renderer(viewing);
 
-    const keyDown = (keyboard) => {
+    const keyDown = (word) => {
       validExpect =
-        keyboard.key === 'c' || keyboard.key === 'Backspace'
-          ? ''
-          : validExpect + keyboard.key;
-      fireEvent.keyDown(container, keyboard);
+        word === 'c' || word === 'backspace' ? '' : validExpect + word;
+      keyDownTyping(word, container);
     };
+
+    '1234567890,'.split('').map((number) => keyDown(number));
+    keyDown('c');
+
+    '1234567890,'.split('').map((number) => keyDown(number));
+    keyDown('backspace');
+  });
+
+  it('should only allow one comma typed on the keyboard', () => {
+    const viewing = (result) => {
+      expect(['', ',']).toContain(result);
+    };
+
+    const { container } = renderer(viewing);
 
     const typing = () => {
-      keyDown({ key: '1', code: 'Digit1', keyCode: 49 });
-      keyDown({ key: '2', code: 'Digit2', keyCode: 50 });
-      keyDown({ key: '3', code: 'Digit3', keyCode: 51 });
-      keyDown({ key: '4', code: 'Digit4', keyCode: 52 });
-      keyDown({ key: '5', code: 'Digit5', keyCode: 53 });
-      keyDown({ key: '6', code: 'Digit6', keyCode: 54 });
-      keyDown({ key: '7', code: 'Digit7', keyCode: 55 });
-      keyDown({ key: '8', code: 'Digit8', keyCode: 56 });
-      keyDown({ key: '9', code: 'Digit9', keyCode: 57 });
-      keyDown({ key: '0', code: 'Digit0', keyCode: 48 });
-      keyDown({ key: ',', code: 'Comma', keyCode: 188 });
+      keyDownTyping(',', container);
     };
 
     typing();
-    keyDown({ key: 'c', code: 'KeyC', keyCode: 67, charCode: 0 });
-
     typing();
-    keyDown({ key: 'Backspace', code: 'Backspace', keyCode: 8, charCode: 0 });
+    typing();
+  });
+
+  it('after typing some numbers and then typing the comma should block preventing typing another comma', () => {
+    const viewing = (result) => {
+      if (result.indexOf(',') !== -1) {
+        expect(result.match(/,/g) || []).toHaveLength(1);
+      }
+    };
+
+    const { container } = renderer(viewing);
+
+    keyDownTyping('1234567890,,,,,,3452345,,,2345,,,', container);
   });
 });

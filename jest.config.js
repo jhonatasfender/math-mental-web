@@ -21,7 +21,14 @@ module.exports = {
   collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: undefined,
+  collectCoverageFrom: [
+    '!src/util/utils-test/*',
+    '!**/node_modules/**',
+    '!src/**/__snapshots__/*',
+    '!.eslintrc.json',
+    '!jest.config.js',
+    '!jsconfig.json',
+  ],
 
   // The directory where Jest should output its coverage files
   coverageDirectory: 'coverage',
@@ -85,11 +92,11 @@ module.exports = {
   moduleNameMapper: {
     '^@components/(.*)$': '<rootDir>src/components/$1',
     '^@hook/(.*)$': '<rootDir>src/hook/$1',
-    '^@utils-test/(.*)$': ['<rootDir>src/util/test/$1'],
+    '^@utils-test/(.*)$': ['<rootDir>src/util/utils-test/$1'],
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  // modulePathIgnorePatterns: [],
+  // modulePathIgnorePatterns: ['<rootDir>src/util/utils-test/'],
 
   // Activates notifications for test results
   // notify: false,
