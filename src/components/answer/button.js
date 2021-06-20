@@ -6,9 +6,7 @@ const Btn = styled.button`
 `;
 
 const Button = ({ children, show, onClick, ...props }) => {
-  const handleClick = () => {
-    onClick(show);
-  };
+  const handleClick = () => onClick(show);
 
   return (
     <Btn type="button" aria-label={show} onClick={handleClick} {...props}>

@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@hook/*": ["src/hook/*"]
+      "@hook/*": ["src/hook/*"],
+      "@utils-test/*": ["src/util/test/*"]
     }
   },
   "typeAcquisition": {

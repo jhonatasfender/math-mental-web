@@ -46,6 +46,7 @@
     "no-confusing-arrow": "off",
     "operator-linebreak": "off",
     "react/jsx-one-expression-per-line": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off"
   }
 }

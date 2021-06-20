@@ -85,6 +85,7 @@ module.exports = {
   moduleNameMapper: {
     '^@components/(.*)$': '<rootDir>src/components/$1',
     '^@hook/(.*)$': '<rootDir>src/hook/$1',
+    '^@utils-test/(.*)$': ['<rootDir>src/util/test/$1'],
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
