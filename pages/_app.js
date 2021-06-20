@@ -1,8 +1,7 @@
-import Provider from '@components/latex/provider';
 import Head from 'next/head';
 
 const App = ({ Component, pageProps }) => (
-  <Provider>
+  <>
     <Head>
       <link
         rel="stylesheet"
@@ -10,7 +9,7 @@ const App = ({ Component, pageProps }) => (
       />
     </Head>
     <Component {...pageProps} />
-  </Provider>
+  </>
 );
 
 export default App;

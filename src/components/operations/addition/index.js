@@ -2,7 +2,6 @@ import Answer from '@components/answer';
 import Node from '@components/latex';
 import styled from 'styled-components';
 import useAddition from './use-addition';
-import Validating from './validating';
 
 /**
  * TODO:
@@ -32,13 +31,16 @@ const Addition = () => {
       }, 1000);
     }
 
-    return <Node>{`${x} + ${y} = ${result}`}</Node>;
+    return column ? (
+      <Node aria-label="operation">{`${x} + ${y} = ${result}`}</Node>
+    ) : (
+      <span>Você terminou!</span>
+    );
   };
 
   return (
     <Container>
       <Answer viewing={render} />
-      <Validating>{column}</Validating>
     </Container>
   );
 };

@@ -33,3 +33,8 @@ utilizar essas cores como padrões do sistema
   color: #d6c4c5;
 }
 ```
+
+```js
+import { screen } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
+```

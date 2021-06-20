@@ -11,7 +11,7 @@ const Button = ({ children, show, onClick, ...props }) => {
   };
 
   return (
-    <Btn type="button" onClick={handleClick} {...props}>
+    <Btn type="button" aria-label={show} onClick={handleClick} {...props}>
       {children}
     </Btn>
   );

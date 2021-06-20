@@ -4,7 +4,8 @@
     "es2021": true,
     "commonjs": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -26,7 +27,7 @@
       }
     }
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "jest"],
   "rules": {
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
@@ -44,6 +45,7 @@
     "implicit-arrow-linebreak": "off",
     "no-confusing-arrow": "off",
     "operator-linebreak": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "react/jsx-one-expression-per-line": "off",
+    "import/no-extraneous-dependencies": "off"
   }
 }

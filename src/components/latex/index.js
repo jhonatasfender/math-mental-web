@@ -1,16 +1,13 @@
-import { ContextKatex } from '@components/latex/provider';
-import { memo, useContext, useEffect, useState } from 'react';
-import styled, { css } from 'styled-components';
+import katex from 'katex';
+import { memo, useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 const Container = styled.div`
-  ${({ fontSize }) => css`
-    width: auto;
-  `}
+  width: auto;
 `;
 
 const Node = ({ children, ...props }) => {
   const [html, setHtml] = useState('');
-  const Katex = useContext(ContextKatex);
 
   const options = {
     displayMode: false,
@@ -24,10 +21,8 @@ const Node = ({ children, ...props }) => {
   };
 
   useEffect(() => {
-    if (Katex) {
-      setHtml(Katex.renderToString(children, options));
-    }
-  }, [children, Katex]);
+    setHtml(katex.renderToString(children, options));
+  }, [children]);
 
   return <Container dangerouslySetInnerHTML={{ __html: html }} {...props} />;
 };
