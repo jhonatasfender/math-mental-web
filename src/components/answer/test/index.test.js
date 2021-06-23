@@ -2,8 +2,8 @@ import Answer from '@components/answer';
 import Node from '@components/latex';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { buttons } from '@utils-test/buttons';
-import { keyDownTyping } from '@utils-test/typing';
+import { buttons } from 'src/utilities/utils-test/buttons';
+import { keyDownTyping } from 'src/utilities/utils-test/typing';
 
 describe('<Answer />', () => {
   const renderer = (viewing) => {

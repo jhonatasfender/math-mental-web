@@ -3,11 +3,11 @@
 exports[`<Answer /> should to render 1`] = `
 <div>
   <div
-    class="answer__Container-q6f55p-1"
+    class="answer__Container-iybhpq-1"
   >
     <div
       aria-label="operation"
-      class="latex__Container-sc-1fqo1it-0 dzsyqa"
+      class="latex__Container-sc-1gi2td7-0 drmSQN"
     >
       <span
         class="katex"
@@ -85,15 +85,15 @@ exports[`<Answer /> should to render 1`] = `
       </span>
     </div>
     <div
-      class="answer__Buttons-q6f55p-0 bIAuJm"
+      class="answer__Buttons-iybhpq-0 oQXPE"
     >
       <button
         aria-label="7"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -121,11 +121,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="8"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -153,11 +153,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="9"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -185,11 +185,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="4"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -217,11 +217,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="5"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -249,11 +249,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="6"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -281,11 +281,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="1"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -313,11 +313,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="2"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -345,11 +345,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="3"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -377,11 +377,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="0"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -409,11 +409,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label=","
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"
@@ -441,11 +441,11 @@ exports[`<Answer /> should to render 1`] = `
       </button>
       <button
         aria-label="c"
-        class="button__Btn-rtag40-0 cfnLWq"
+        class="button__Btn-usgv6-0 jxsgGL"
         type="button"
       >
         <div
-          class="latex__Container-sc-1fqo1it-0 dzsyqa"
+          class="latex__Container-sc-1gi2td7-0 drmSQN"
         >
           <span
             class="katex"

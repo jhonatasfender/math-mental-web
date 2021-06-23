@@ -1,7 +1,7 @@
 import Addition from '@components/operations/addition';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { buttons } from '@utils-test/buttons';
+import { buttons } from 'src/utilities/utils-test/buttons';
 import { act } from 'react-dom/test-utils';
 
 const allCalcs = () => {

@@ -1,7 +1,10 @@
 {
   "editor.formatOnSave": true,
   "files.autoSave": "onFocusChange",
-  "cSpell.words": ["Katex"],
+  "cSpell.words": [
+    "Katex",
+    "tailwindcss"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
