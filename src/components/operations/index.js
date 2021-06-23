@@ -6,7 +6,7 @@ import Squared from '@components/operations/squared';
 import Subtraction from '@components/operations/subtraction';
 
 const operations = {
-  sum: <Addition />,
+  addition: <Addition />,
   subtraction: <Subtraction />,
   multiplication: <Multiplication />,
   division: <Division />,

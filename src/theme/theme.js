@@ -71,6 +71,23 @@ export default {
           '#D8D8F0',
         ]),
       },
+      percentage: {
+        backgroundLock: '#F9F9F9',
+        wave: '#F9F9F9',
+        scale: colors([
+          '#4E4646',
+          '#615759',
+          '#74696E',
+          '#877A83',
+          '#9a8c98',
+          '#A79BA8',
+          '#B3AAB5',
+          '#BFBAC3',
+          '#CCC9D0',
+          '#D9D8DE',
+          '#E8E8EB',
+        ]),
+      },
       fraction: {
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',

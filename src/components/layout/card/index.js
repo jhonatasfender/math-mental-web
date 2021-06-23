@@ -15,7 +15,7 @@ const color = (lock, theme, sector) =>
     : theme.colors.colorsSectors(sector).scale(10);
 
 const CardWrapper = styled.div`
-  ${({ theme, lock, sector }) => css`
+  ${({ theme, lock, sector, move }) => css`
     border-radius: 1rem;
     min-width: 13rem;
     width: 13rem;
@@ -32,6 +32,8 @@ const CardWrapper = styled.div`
     margin: 1rem;
     background: ${background(lock, theme, sector)};
     user-select: none;
+    transform: translateX(${move ? `${move}rem` : '0'});
+    transition: transform 1s;
 
     > span {
       font-size: 0.9rem;
@@ -64,8 +66,8 @@ const Blocked = styled(Lock)`
   width: 3rem;
 `;
 
-const Card = ({ level, progress, lock, sector, children }) => (
-  <CardWrapper lock={lock} sector={sector}>
+const Card = ({ level, progress, lock, sector, children, move, ...props }) => (
+  <CardWrapper lock={lock} sector={sector} move={move} {...props}>
     {lock ? (
       <Blocked />
     ) : (
