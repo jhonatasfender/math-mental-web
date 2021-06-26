@@ -1,13 +1,13 @@
 import useGetOperation from '@components/operations/index';
 import { useRouter } from 'next/router';
-import styled, { css } from 'styled-components';
+import styled, { css, ThemeProvider } from 'styled-components';
 import { ArrowIosBackOutline } from 'styled-icons/evaicons-outline';
 import ProgressBar from '@components/layout/progress-bar';
 
 const Container = styled.div`
-  ${({ theme, sector }) => css`
+  ${({ theme: { sector, ...theme } }) => css`
     width: 100%;
-    background: ${theme.colors.colorsSectors(sector).scale(4)};
+    background: ${theme.colors.colorsSectors(sector).scale(3)};
     color: ${theme.colors.colorsSectors(sector).scale(10)};
     border-radius: 1rem;
     box-shadow: 5px 0px 9px 0px ${theme.colors.colorsSectors(sector).scale(9)},
@@ -16,6 +16,7 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 1rem;
+    user-select: none;
   `}
 `;
 
@@ -28,6 +29,7 @@ const Header = styled.div`
 
 const Back = styled(ArrowIosBackOutline)`
   width: 2rem;
+  cursor: pointer;
 `;
 
 const Center = styled.div`
@@ -43,21 +45,19 @@ export default function Operation() {
   const component = useGetOperation(query.operation);
 
   return (
-    <Container sector={query.operation}>
-      <Header>
-        <Back />
-        <Center>
-          <span>{query.operation}</span>
-          <ProgressBar sector={query.operation} />
-        </Center>
-        <span>HINT</span>
-      </Header>
+    <ThemeProvider theme={{ sector: query.operation }}>
+      <Container>
+        <Header>
+          <Back onClick={() => back()} />
+          <Center>
+            <span>{query.operation}</span>
+            <ProgressBar />
+          </Center>
+          <span>HINT</span>
+        </Header>
 
-      {component}
-
-      <button type="button" onClick={() => back()}>
-        Click here to go back
-      </button>
-    </Container>
+        {component}
+      </Container>
+    </ThemeProvider>
   );
 }

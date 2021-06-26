@@ -2,8 +2,11 @@ const colors = (attrs) => (sector) => attrs[sector];
 
 export default {
   colors: {
+    background: '#EDEDED',
     colorsSectors: colors({
       addition: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([
@@ -21,6 +24,8 @@ export default {
         ]),
       },
       subtraction: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([
@@ -38,6 +43,8 @@ export default {
         ]),
       },
       multiplication: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([
@@ -55,6 +62,8 @@ export default {
         ]),
       },
       division: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([
@@ -72,6 +81,8 @@ export default {
         ]),
       },
       percentage: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([
@@ -89,6 +100,8 @@ export default {
         ]),
       },
       fraction: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([
@@ -106,6 +119,8 @@ export default {
         ]),
       },
       sqrt: {
+        backgroundDefault: '#F9F9F9',
+        darkModeActive: false,
         backgroundLock: '#F9F9F9',
         wave: '#F9F9F9',
         scale: colors([

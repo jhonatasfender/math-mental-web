@@ -11,7 +11,7 @@ const operations = {
   multiplication: <Multiplication />,
   division: <Division />,
   fraction: <Fraction />,
-  squared: <Squared />,
+  sqrt: <Squared />,
 };
 
 export default function useGetOperation(operation) {

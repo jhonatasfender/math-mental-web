@@ -91,7 +91,7 @@ module.exports = {
   moduleNameMapper: {
     '^@components/(.*)$': '<rootDir>src/components/$1',
     '^@hook/(.*)$': '<rootDir>src/hook/$1',
-    '^@utils-test/(.*)$': ['<rootDir>src/util/utils-test/$1'],
+    '^@utils-test/(.*)$': ['<rootDir>src/utilities/utils-test/$1'],
     '^@theme/(.*)$': ['<rootDir>src/theme/$1'],
   },
 

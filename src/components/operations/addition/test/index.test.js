@@ -1,7 +1,8 @@
 import Addition from '@components/operations/addition';
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { buttons } from 'src/utilities/utils-test/buttons';
+import { buttons } from '@utils-test/buttons';
+import { renderWithTheme } from '@utils-test/render-with-theme';
 import { act } from 'react-dom/test-utils';
 
 const allCalcs = () => {
@@ -19,7 +20,7 @@ describe('<Addition />', () => {
   it('should never repeat a calculation', async () => {
     jest.useFakeTimers();
 
-    render(<Addition />);
+    renderWithTheme(<Addition />);
 
     const calcs = allCalcs();
     const size = Object.keys(calcs).length;

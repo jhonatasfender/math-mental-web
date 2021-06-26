@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import Node from '@components/latex';
 import styled from 'styled-components';
-import Button from './button';
+import Button from '@components/answer/button';
+import WrapperContainerAnswer from '@components/answer/wrapper-container-answer';
 
 const Buttons = styled.div`
   display: grid;
@@ -9,9 +10,6 @@ const Buttons = styled.div`
   grid-template-rows: 1fr 1fr 1fr 1fr;
   width: min-content;
 `;
-
-const Container = styled.div``;
-
 const allowedKeys = [
   '7',
   '8',
@@ -61,9 +59,10 @@ export default function Answer({ viewing, ...props }) {
   };
 
   return (
-    <Container {...props}>
-      {viewing && viewing(result, setResult)}
-
+    <WrapperContainerAnswer
+      {...props}
+      viewing={viewing && viewing(result, setResult)}
+    >
       <Buttons>
         {allowedKeys.map((number) => (
           <Button key={number} onClick={handleClick} show={number}>
@@ -71,6 +70,6 @@ export default function Answer({ viewing, ...props }) {
           </Button>
         ))}
       </Buttons>
-    </Container>
+    </WrapperContainerAnswer>
   );
 }

@@ -15,7 +15,7 @@ const color = (lock, theme, sector) =>
     : theme.colors.colorsSectors(sector).scale(10);
 
 const CardWrapper = styled.div`
-  ${({ theme, lock, sector, move }) => css`
+  ${({ theme: { sector, ...theme }, lock, move }) => css`
     border-radius: 1rem;
     min-width: 13rem;
     width: 13rem;
@@ -43,7 +43,7 @@ const CardWrapper = styled.div`
 `;
 
 const Footer = styled.div`
-  ${({ theme, sector }) => css`
+  ${({ theme: { sector, ...theme } }) => css`
     width: 100%;
     background: ${theme.colors.colorsSectors(sector).wave};
     height: 3rem;
@@ -66,8 +66,8 @@ const Blocked = styled(Lock)`
   width: 3rem;
 `;
 
-const Card = ({ level, progress, lock, sector, children, move, ...props }) => (
-  <CardWrapper lock={lock} sector={sector} move={move} {...props}>
+const Card = ({ level, progress, lock, children, move, ...props }) => (
+  <CardWrapper lock={lock} move={move} {...props}>
     {lock ? (
       <Blocked />
     ) : (
@@ -75,9 +75,9 @@ const Card = ({ level, progress, lock, sector, children, move, ...props }) => (
         <span>level {level}</span>
         <NodeStyled>{children}</NodeStyled>
 
-        <Wave sector={sector} />
-        <Footer sector={sector}>
-          <ProgressBar progress={progress} sector={sector} />
+        <Wave />
+        <Footer>
+          <ProgressBar progress={progress} />
         </Footer>
       </>
     )}

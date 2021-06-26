@@ -1,8 +1,9 @@
 import SectionCarousel from '@components/layout/section-carousel';
 import { useRouter } from 'node_modules/next/router';
+import { ThemeProvider } from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
 
-const listOptions = [
+export const listOptions = [
   {
     id: uuidv4(),
     sector: 'addition',
@@ -59,7 +60,9 @@ export default function Home() {
 
   const redirect = (href) => push(href);
 
-  return listOptions.map(({ id, ...options }) => (
-    <SectionCarousel {...options} key={id} redirect={redirect} />
+  return listOptions.map(({ id, sector, ...options }) => (
+    <ThemeProvider theme={{ sector }} key={id}>
+      <SectionCarousel {...options} redirect={redirect} />
+    </ThemeProvider>
   ));
 }

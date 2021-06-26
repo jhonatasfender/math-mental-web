@@ -8,6 +8,10 @@ const Container = styled.div`
   gap: 2rem;
 `;
 
+/**
+ * TODO: fazer a tratativa para poder receber o level
+ */
+
 const Addition = () => {
   const [x, y, random, column] = useAddition();
 

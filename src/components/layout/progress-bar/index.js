@@ -9,17 +9,18 @@ const ProgressBarWrapper = styled.div`
 `;
 
 const Bar = styled.div`
-  ${({ theme, progress, sector }) => css`
+  ${({ theme: { sector, ...theme }, progress }) => css`
     background: ${theme.colors.colorsSectors(sector).scale(5)};
     width: ${progress ? `${progress}%` : '30%'};
     height: 100%;
     border-radius: 1rem;
+    border: none;
   `}
 `;
 
-const ProgressBar = ({ progress, sector }) => (
+const ProgressBar = ({ progress }) => (
   <ProgressBarWrapper>
-    <Bar progress={progress} sector={sector} />
+    <Bar progress={progress} />
   </ProgressBarWrapper>
 );
 

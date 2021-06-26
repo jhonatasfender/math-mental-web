@@ -1,13 +1,13 @@
 import Answer from '@components/answer';
 import Node from '@components/latex';
-import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { buttons } from 'src/utilities/utils-test/buttons';
-import { keyDownTyping } from 'src/utilities/utils-test/typing';
+import { buttons } from '@utils-test/buttons';
+import { renderWithTheme } from '@utils-test/render-with-theme';
+import { keyDownTyping } from '@utils-test/typing';
 
 describe('<Answer />', () => {
   const renderer = (viewing) => {
-    const all = render(
+    const all = renderWithTheme(
       <Answer
         viewing={
           viewing || (() => <Node aria-label="operation">10 + 10 = 20</Node>)
