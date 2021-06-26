@@ -27,6 +27,11 @@ module.exports = {
     '!*/**/__snapshots__/*',
     '!*.json',
     '!jest.config.js',
+    '!**/.next/**',
+    '!**/.vscode/**',
+    '!**/coverage/**',
+    '!**/public/**',
+    '!**/pages/**', // tive que tirar porque não consegui realizar os testes com a biblioteca next-page-tester
   ],
 
   // The directory where Jest should output its coverage files

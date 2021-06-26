@@ -1,33 +1,16 @@
 import { screen } from '@testing-library/react';
 
-export const buttons = () => {
-  const [
-    seven,
-    eight,
-    nine,
-    four,
-    five,
-    six,
-    one,
-    two,
-    three,
-    zero,
-    point,
-    clear,
-  ] = screen.getAllByRole('button');
-
-  return {
-    0: zero,
-    1: one,
-    2: two,
-    3: three,
-    4: four,
-    5: five,
-    6: six,
-    7: seven,
-    8: eight,
-    9: nine,
-    ',': point,
-    C: clear,
-  };
-};
+export const buttons = () => ({
+  0: screen.getByRole('button', { name: '0' }),
+  1: screen.getByRole('button', { name: '1' }),
+  2: screen.getByRole('button', { name: '2' }),
+  3: screen.getByRole('button', { name: '3' }),
+  4: screen.getByRole('button', { name: '4' }),
+  5: screen.getByRole('button', { name: '5' }),
+  6: screen.getByRole('button', { name: '6' }),
+  7: screen.getByRole('button', { name: '7' }),
+  8: screen.getByRole('button', { name: '8' }),
+  9: screen.getByRole('button', { name: '9' }),
+  ',': screen.getByRole('button', { name: '1' }),
+  C: screen.getByRole('button', { name: 'c' }),
+});

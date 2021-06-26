@@ -127,10 +127,13 @@ exports[`<Card /> should render 1`] = `
     class="c0"
   >
     <svg
-      aria-hidden="true"
+      aria-hidden="false"
+      aria-label="dark mode"
       class="c1 c2"
       fill="currentColor"
       focusable="false"
+      role="button"
+      type="button"
       viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -143,10 +146,12 @@ exports[`<Card /> should render 1`] = `
     class="c3"
   >
     <div
+      aria-label="level 1"
       class="c4"
     >
       <span>
         level 
+        1
       </span>
       <div
         class="c5 c6"

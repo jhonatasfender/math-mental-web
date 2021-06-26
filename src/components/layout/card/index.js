@@ -67,7 +67,7 @@ const Blocked = styled(Lock)`
 `;
 
 const Card = ({ level, progress, lock, children, move, ...props }) => (
-  <CardWrapper lock={lock} move={move} {...props}>
+  <CardWrapper lock={lock} move={move} aria-label={`level ${level}`} {...props}>
     {lock ? (
       <Blocked />
     ) : (

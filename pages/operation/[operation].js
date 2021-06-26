@@ -46,18 +46,20 @@ export default function Operation() {
 
   return (
     <ThemeProvider theme={{ sector: query.operation }}>
-      <Container>
-        <Header>
-          <Back onClick={() => back()} />
-          <Center>
-            <span>{query.operation}</span>
-            <ProgressBar />
-          </Center>
-          <span>HINT</span>
-        </Header>
+      {query.operation && (
+        <Container>
+          <Header>
+            <Back onClick={() => back()} />
+            <Center>
+              <span>{query.operation}</span>
+              <ProgressBar />
+            </Center>
+            <span>HINT</span>
+          </Header>
 
-        {component}
-      </Container>
+          {component}
+        </Container>
+      )}
     </ThemeProvider>
   );
 }

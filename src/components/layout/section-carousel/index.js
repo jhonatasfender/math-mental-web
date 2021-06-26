@@ -62,8 +62,13 @@ const SectionCarousel = ({ name, formula, redirect, href }) => {
     <Wrapper>
       <H1>{name}</H1>
 
-      <Carousel ref={ref}>
-        <Previous onClick={handleClickPrevious} />
+      <Carousel ref={ref} role="list">
+        <Previous
+          onClick={handleClickPrevious}
+          role="button"
+          aria-label="previous"
+          aria-hidden="false"
+        />
         {Array.from({ length: 20 }, (_, i) => (
           <Card
             key={i}
@@ -72,11 +77,17 @@ const SectionCarousel = ({ name, formula, redirect, href }) => {
             lock={i > 4}
             move={move}
             onClick={() => redirect(href)}
+            role="listitem"
           >
             {formula}
           </Card>
         ))}
-        <Next onClick={handleClickNext} />
+        <Next
+          onClick={handleClickNext}
+          role="button"
+          aria-label="next"
+          aria-hidden="false"
+        />
       </Carousel>
     </Wrapper>
   );

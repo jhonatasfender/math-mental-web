@@ -11,7 +11,13 @@ const Dark = styled(DarkTheme)`
 
 const Header = ({ onClick }) => (
   <HeaderStyle>
-    <Dark onClick={onClick} />
+    <Dark
+      onClick={onClick}
+      type="button"
+      role="button"
+      aria-hidden="false"
+      aria-label="dark mode"
+    />
   </HeaderStyle>
 );
 export default Header;

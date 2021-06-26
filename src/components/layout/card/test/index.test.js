@@ -6,7 +6,7 @@ describe('<Card />', () => {
   it('should render', () => {
     const { container } = renderWithMain(
       <ThemeProvider theme={{ sector: 'addition' }}>
-        <Card />
+        <Card level={1} />
       </ThemeProvider>,
     );
 

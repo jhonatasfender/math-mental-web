@@ -29,7 +29,7 @@
       }
     }
   },
-  "plugins": ["react", "prettier", "jest"],
+  "plugins": ["react", "prettier", "jest", "jsx-a11y"],
   "rules": {
     "react/prop-types": "off",
     "react/jsx-filename-extension": "off",
