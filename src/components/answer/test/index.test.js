@@ -2,17 +2,20 @@ import Answer from '@components/answer';
 import Node from '@components/latex';
 import userEvent from '@testing-library/user-event';
 import { buttons } from '@utils-test/buttons';
-import { renderWithTheme } from '@utils-test/render-with-theme';
+import { renderWithMain } from '@utils-test/render-with-theme';
 import { keyDownTyping } from '@utils-test/typing';
+import { ThemeProvider } from 'styled-components';
 
 describe('<Answer />', () => {
   const renderer = (viewing) => {
-    const all = renderWithTheme(
-      <Answer
-        viewing={
-          viewing || (() => <Node aria-label="operation">10 + 10 = 20</Node>)
-        }
-      />,
+    const all = renderWithMain(
+      <ThemeProvider theme={{ sector: 'addition' }}>
+        <Answer
+          viewing={
+            viewing || (() => <Node aria-label="operation">10 + 10 = 20</Node>)
+          }
+        />
+      </ThemeProvider>,
     );
     return all;
   };

@@ -18,5 +18,26 @@
       ""
     ],
     "description": "Function Component"
+  },
+  "basic Test": {
+    "prefix": "testbasic",
+    "body": [
+      "import $0 from '@components/layout/$0';",
+      "import { renderWithMain } from '@utils-test/render-with-theme';",
+      "import { ThemeProvider } from 'styled-components';",
+      "",
+      "describe('<$0 />', () => {",
+      "  it('should render', () => {",
+      "    const { container } = renderWithMain(",
+      "      <ThemeProvider theme={{ sector: 'addition' }}>",
+      "        <$0 />",
+      "      </ThemeProvider>,",
+      "    );",
+      "",
+      "    expect(container).toMatchSnapshot();",
+      "  });",
+      "});"
+    ],
+    "description": "basic Test"
   }
 }

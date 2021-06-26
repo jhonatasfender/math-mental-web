@@ -2,8 +2,9 @@ import Addition from '@components/operations/addition';
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { buttons } from '@utils-test/buttons';
-import { renderWithTheme } from '@utils-test/render-with-theme';
+import { renderWithMain } from '@utils-test/render-with-theme';
 import { act } from 'react-dom/test-utils';
+import { ThemeProvider } from 'styled-components';
 
 const allCalcs = () => {
   const calcs = {};
@@ -20,7 +21,11 @@ describe('<Addition />', () => {
   it('should never repeat a calculation', async () => {
     jest.useFakeTimers();
 
-    renderWithTheme(<Addition />);
+    renderWithMain(
+      <ThemeProvider theme={{ sector: 'addition' }}>
+        <Addition />
+      </ThemeProvider>,
+    );
 
     const calcs = allCalcs();
     const size = Object.keys(calcs).length;

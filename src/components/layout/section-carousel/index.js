@@ -81,4 +81,5 @@ const SectionCarousel = ({ name, formula, redirect, href }) => {
     </Wrapper>
   );
 };
+
 export default SectionCarousel;

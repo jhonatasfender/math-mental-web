@@ -21,7 +21,7 @@ const Node = ({ children, ...props }) => {
   };
 
   useEffect(() => {
-    setHtml(katex.renderToString(children, options));
+    if (children) setHtml(katex.renderToString(children, options));
   }, [children]);
 
   return <Container dangerouslySetInnerHTML={{ __html: html }} {...props} />;

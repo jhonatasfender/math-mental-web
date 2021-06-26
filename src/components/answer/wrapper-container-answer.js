@@ -5,7 +5,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-
 const Viewing = styled.div`
   ${({ theme: { sector, ...theme } }) => css`
     background: ${theme.colors.colorsSectors(sector).scale(10)};

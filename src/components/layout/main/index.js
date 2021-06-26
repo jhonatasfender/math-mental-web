@@ -1,4 +1,4 @@
-import Header from '@components/layout/Header';
+import Header from '@components/layout/header';
 import { Container, GlobalStyle } from '@theme/global-styles';
 import theme from '@theme/theme';
 import themeDark from '@theme/theme-dark';
@@ -11,7 +11,6 @@ const Main = ({ children }) => {
   const handleClick = () => {
     setDark((prev) => !prev);
   };
-
   return (
     <ThemeProvider theme={isDark ? themeDark : theme}>
       <GlobalStyle />
