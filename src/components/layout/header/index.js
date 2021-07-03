@@ -7,6 +7,7 @@ const HeaderStyle = styled.header`
 
 const Dark = styled(DarkTheme)`
   width: 3rem;
+  grid-area: header;
 `;
 
 const Header = ({ onClick }) => (
